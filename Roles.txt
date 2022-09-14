@@ -1,0 +1,5 @@
+All squad memebers participated in program design in discussion meeting.
+Member duties : 
+Sama : Coding of circle, pyramid and switch case.
+Mohamed : coding of square andd right triangle.
+Mazen : Input filtering, struct implementation, code cleanup and documentation. 
