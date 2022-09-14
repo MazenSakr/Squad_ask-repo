@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include <windows.h>
 #pragma warning (disable : 4996)
+#define Arr_Size  100
 /********************************************/
 
 
@@ -19,6 +20,8 @@ void drawCircle(float);
 void drawSquare(int);
 void drawRightTriangle(int);
 void drawPyramid(int);
+void FILL_ARR(char* ptr, int height);
+void PRINT_ARR(char* ptr, int height);
 struct polygon
 {
     int height;
@@ -38,7 +41,7 @@ int main(void) {
 
     while (1)
     {
-        scanf(" %c", &shape.type);
+        scanf("%c", &shape.type);
         shape.type = toupper(shape.type);
         if (shape.type == 'C' || shape.type == 'S' || shape.type == 'P' || shape.type == 'T')
         {
@@ -50,11 +53,11 @@ int main(void) {
 
     switch (shape.type)
     {
-    case 'C':
+    case 'C'://circle
         printf("Enter diameter: ");
-        while (1)
+        while (1) //input filtering
         {
-            scanf(" %d", &shape.height);
+            scanf("%d", &shape.height);
             shape.type = toupper(shape.height);
             if (shape.height > 0)
             {
@@ -67,9 +70,9 @@ int main(void) {
 
     case 'S':
         printf("Enter side length: ");
-        while (1)
+        while (1) //input filtering
         {
-            scanf(" %d", &shape.height);
+            scanf("%d", &shape.height);
             shape.type = toupper(shape.height);
             if (shape.height > 0)
             {
@@ -82,9 +85,9 @@ int main(void) {
 
     case 'T':
         printf("Enter max height: ");
-        while (1)
+        while (1) //input filtering
         {
-            scanf(" %d", &shape.height);
+            scanf("%d", &shape.height);
             shape.type = toupper(shape.height);
             if (shape.height > 0)
             {
@@ -97,9 +100,9 @@ int main(void) {
 
     case 'P':
         printf("Enter max height: ");
-        while (1)
+        while (1) //input filtering
         {
-            scanf(" %d", &shape.height);
+            scanf("%d", &shape.height);
             shape.type = toupper(shape.height);
             if (shape.height > 0)
             {
@@ -121,13 +124,13 @@ int main(void) {
 // Functions :
 void drawCircle(float Diameter)
 {
-    float rad = Diameter / 2 - 0.5, tol = rad / 3;
+    float radius = Diameter / 2 - 0.5, tol = radius / 3;
 
-    for (float x = -rad; x <= rad; x++)
+    for (float x = -radius; x <= radius; x++)
     {
-        for (float y = -rad; y <= rad; y++)
+        for (float y = -radius; y <= radius; y++)
         {
-            if (x * x + y * y - rad * rad <= tol)
+            if (x * x + y * y - radius * radius <= tol)
 
                 printf("* ");
 
@@ -167,13 +170,34 @@ void drawRightTriangle(int height)
 }
 void drawSquare(int height)
 {
-    for (int x = 0; x < height; x++)
+    char arr[Arr_Size];
+    FILL_ARR(arr, height);
+    int counter = height;
+    while (counter)
     {
-        for (int y = 0; y < height; y++)
-        {
-            printf(" *");
-        }
-        printf("\n");
+        PRINT_ARR(arr, height);
+        counter--;
     }
+}
+void FILL_ARR(char* ptr, int height)
+{
+    for (int i = 0; i < (height); i++)
+    {
+        *(ptr + i) = '*';
+
+    }
+
+}
+void PRINT_ARR(char* ptr, int height)
+{
+
+    for (int i = 0; i < height; i++)
+    {
+        printf("%c", *(ptr + i));
+        printf(" ");
+
+    }
+
+    printf("\n");
 }
 /************************************************************/
