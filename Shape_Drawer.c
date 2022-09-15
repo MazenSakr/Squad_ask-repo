@@ -1,7 +1,7 @@
 /* Documentation
  ---------------------------------------------------
  | File Name : Shape drawer
- | Editors : Sama Adam, Mohamed Ahme,Mazen Sakr.
+ | Editors : Sama Adam, Mohamed Ahmed,Mazen Sakr.
  | Description : a program that draws shapes based on input
  ---------------------------------------------------
 */
@@ -124,7 +124,8 @@ int main(void) {
 // Functions :
 void drawCircle(float Diameter)
 {
-    float radius = Diameter / 2 - 0.5, tol = radius / 3;
+    float radius = Diameter / 2 - 0.5; / the -0.5 is to delete the additional center point (0,0) to the diameter/
+     tol = radius / 3; /tolerence needed to make the circle more accurate/
 
     for (float x = -radius; x <= radius; x++)
     {
@@ -135,7 +136,7 @@ void drawCircle(float Diameter)
                 printf("* ");
 
             else
-                printf("  ");
+                printf("  "); /two spaces/
         }
         printf("\n");
     }
