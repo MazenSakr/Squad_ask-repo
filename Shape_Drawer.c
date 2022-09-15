@@ -124,8 +124,8 @@ int main(void) {
 // Functions :
 void drawCircle(float Diameter)
 {
-    float radius = Diameter / 2 - 0.5; / the -0.5 is to delete the additional center point (0,0) to the diameter/
-     tol = radius / 3; /tolerence needed to make the circle more accurate/
+    float radius = Diameter // 2 - 0.5; / the -0.5 is to delete the additional center point (0,0) to the diameter//
+    float tol = radius / 3; //tolerence needed to make the circle more accurate//
 
     for (float x = -radius; x <= radius; x++)
     {
@@ -136,7 +136,7 @@ void drawCircle(float Diameter)
                 printf("* ");
 
             else
-                printf("  "); /two spaces/
+                printf("  "); //two spaces//
         }
         printf("\n");
     }
