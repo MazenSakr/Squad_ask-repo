@@ -1,3 +1,4 @@
- 1)Sama and Mazen worked on Project Design and implementation of the functions. 
+ Sama worked on almost all of the program design
+1)Sama and Mazen worked on Project implementation of the functions. 
  2)Mohamed worked on the documentation and connection between  Sama's and Mazen's algorithms .
 
